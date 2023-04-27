@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap%27');
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
+    font-family: 'Karla', sans-serif;
     background-image: url("image/background-img.svg");
     background-repeat: no-repeat;
     background-position-x: 77px;
@@ -18,7 +20,6 @@ body {
     margin: 60px 10px 10px 129px;
     width: 532px;
     height: 410px;
-    /* background-color: aqua; */
 }
 
 .signbtn {
@@ -40,7 +41,6 @@ body {
 }
 
 .Password {
-    /* border-color: #A3B6A7; */
     color: black;
     border: none;
     height: 41px;
@@ -117,7 +117,6 @@ img.illustor {
 }
 
 h1.AccountText {
-    /* margin-top: 30px; */
     margin-left: 220px;
     margin-bottom: -42px;
     color: #002F07;
@@ -197,6 +196,7 @@ span.passwordiconsee {
 
 .user_alert{
     font-family: 'Karla', sans-serif;
+    font-weight: 500;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 5px 10px rgb(0 0 0 / 68%);

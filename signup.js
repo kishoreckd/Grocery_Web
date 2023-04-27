@@ -53,7 +53,7 @@ signup.addEventListener("click", (e) => {
             }
             else {
                 /* If the user is already existed it alerts the user*/
-
+                user_alert.innerText = " Username already exists"
                 user_alert.classList.add("visible")
 
                 setTimeout(() => {
@@ -62,24 +62,12 @@ signup.addEventListener("click", (e) => {
             }
         })
 })
-/* ---------------------------------------------------------------------------------------- */
-/* This function checks whether the user inputs the password is equal to confirm password*/
-// function userseepassword(e) {
-
-//     if (Password.type == " password") {
-//         Password.type = "password"
-
-//     }
-//     else {
-//         Password.type = "text"
-//         passwordiconsee.style.display = "block"
-//         passwordicon.style.display = "none"
-
-//     }
-// }
-
 
 /* ---------------------------------------------------------------------------------------- */
+
+/*This checks the password whether the user is entered the valid password*/
+let password_check = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
 /*This function used to create the data for the user*/
 function gettingdata_from_user() {
     {
@@ -88,24 +76,36 @@ function gettingdata_from_user() {
         if (Firstname.value && LastName.value && userEmail.value && Password.value && Confirmpassword.value) {
 
             if (Password.value == Confirmpassword.value) {
-                fetch("http://localhost:3000/users", {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        Firstname: `${Firstname.value}`,
-                        LastName: `${LastName.value}`,
-                        Email: `${userEmail.value}`,
-                        Password: `${Password.value}`,
-                        Confirmpassword: `${Confirmpassword.value}`
-                    }),
-                    headers: {
-                        'Content-type': 'application/json; charset=UTF-8',
-                    }
-                })
-                    .then((response) => response.json())
-                    .then((data) => {
 
+                if (Password.value.match(password_check)) {
+                    fetch("http://localhost:3000/users", {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            Firstname: `${Firstname.value}`,
+                            LastName: `${LastName.value}`,
+                            Email: `${userEmail.value}`,
+                            Password: `${Confirmpassword.value}`
+                        }),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                        }
                     })
-                    .catch(err => console.log(err))
+                        .then((response) => response.json())
+                        .then((data) => {
+
+                        })
+                        .catch(err => console.log(err))
+
+                } 
+                else
+                 {
+                    Password_alert.innerText = "please enter the Correct password"
+
+                    setTimeout(() => {
+                        Password_alert.innerText = ""
+                    }, 1000);
+                }
+
             }
             else {
 
@@ -116,6 +116,16 @@ function gettingdata_from_user() {
                 }, 1000);
             }
         }
+        else {
+
+            user_alert.innerText = "Please fill up all the column"
+            user_alert.classList.add("visible")
+
+            setTimeout(() => {
+                user_alert.classList.remove("visible")
+            }, 1000);
+
+        }
 
 
 
@@ -123,11 +133,3 @@ function gettingdata_from_user() {
 }
 
 /* ---------------------------------------------------------------------------------------- */
-
-
-function add(e) {
-    let a = e.className = "fa-solid fa-eye"
-    // a.classList[1] = "fa-eye"
-    // a.classList.value.innerHTML = `<i class="fa-solid fa-eye"></i>`
-    console.log(a)
-}   

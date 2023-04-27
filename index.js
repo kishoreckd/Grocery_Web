@@ -1,22 +1,21 @@
 let userEmail= document.querySelector(".email")
-// console.log(userEmail);
 let Password= document.querySelector(".password")
-// console.log(Password);
 let submit=document.querySelector(".submit")
 let user_alert=document.querySelector(".user_alert")
-console.log(user_alert);
+let passwordicon = document.querySelector("#passwordicon")
 
-
+/* ---------------------------------------------------------------------------------------- */
+/* checking whether the user is old or new*/
 submit.addEventListener("click",(e)=>{
     // alert()
     e.preventDefault()
     fetch(`http://localhost:3000/users/?Email=${userEmail.value}&Password=${Password.value}`)
     .then(data => data.json())
     .then(data=>{
-        console.log(data);
         if (data.length ==0) {
-            // alert()
+            
 
+            user_alert.innerText = "Incorrect username or Password"
             user_alert.classList.add("visible")
 
             setTimeout(() => {
@@ -28,3 +27,24 @@ submit.addEventListener("click",(e)=>{
 
 
 })
+/* ---------------------------------------------------------------------------------------- */
+
+/* eye icon changing functionality*/
+passwordicon.addEventListener("click", (e) => {
+
+    if (e.target.parentElement.previousElementSibling.type == "password") {
+        e.target.className = "fa-solid fa-eye"
+        e.target.parentElement.previousElementSibling.type = "text"
+    }
+
+    else if (e.target.parentElement.previousElementSibling.type == "text") {
+        e.target.className = "fa-solid fa-eye-slash"
+        e.target.parentElement.previousElementSibling.type = "password"
+
+
+
+    }
+})
+
+/* ---------------------------------------------------------------------------------------- */
+
