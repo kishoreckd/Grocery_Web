@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,16 @@
     <link rel="icon" href="images/logo.svg">
     <title>login</title>
     <link rel="stylesheet" href="style.css">
+    <!-- <style>@import url('https://fonts.cdnfonts.com/css/karla')</style> -->
+
+
+
 </head>
+
 <body>
+    <div class="user_alert">
+        <h3>Incorrect username or Password</h3>
+    </div>
     <div class="container">
         <nav>
             <img class="logos" src="images/logo.svg" alt="">
@@ -20,15 +29,17 @@
             <img class="illustration" src="images/Group 4.svg" alt="">
         </div>
         <div class="main2">
-            <h3 class="error_alert"></h3>
+
             <h1 class="headtext">Happy to see you back 👋</h1>
             <p class="hearpara">Log in to Claim all the offers and stay healthy</p>
             <form class="loginform">
                 <label for="email">Email:</label><span class="labels">*</span><br>
-                <input class="email" type="email" placeholder="Example@gmail.com"><br><br>
+                <input class="email" type="email" placeholder="Example@gmail.com" required><br><br>
                 <label for="password">Password:</label><span class="labels">*</span><br>
-                <input class="password" type="password" placeholder="password"> <span class="passwordicon"><i id="passwordicon" class="fa-solid fa-eye-slash"></i></span> <span class="passwordiconsee"><i class="fa-solid fa-eye"></i></span> <br><br>
-                <button class="login_btn" type="submit">Log In</button>
+                <input class="password" type="password" placeholder="password"> <span class="passwordicon"><i
+                        id="passwordicon" class="fa-solid fa-eye-slash"></i></span> <span class="passwordiconsee"><i
+                        class="fa-solid fa-eye"></i></span> <br><br>
+                <button class="submit" type="submit">Log In</button>
             </form>
             <p class="add-singup">New to Grocery ?<a class="add-login-a" href="signup.html">Sign In</a></p>
 
@@ -38,9 +49,7 @@
 
 
     </div>
-
-
-
     <script src="index.js"></script>
 </body>
+
 </html>

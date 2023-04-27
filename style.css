@@ -1,12 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap%27');
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 body{
+    font-family: 'Karla', sans-serif;
     background-image: url("images/Rectangle\ 28.svg");
     background-repeat: no-repeat;
     background-position-y: -15px;
+}
+.user_alert{
+    font-family: 'Karla', sans-serif;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 68%);
+    transition: all 0.3s linear;
+    padding: 21px;
+    width: 26%;
+    text-align: center;
+    color: red;
+    margin-left: 769px;
+    margin-top: 43px;
+    display: block;
+    position: absolute;
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
 }
 .container{
     display: flex;
@@ -46,7 +68,7 @@ input:focus{
 }
 
 h1.headtext {
-    margin-top: 150px;
+    margin-top: 140px;
     margin-left: 100px;
     color: #002F07;
 }
@@ -93,13 +115,33 @@ a.add-login-a {
     color: red;
     text-decoration: none;
 }
-#passwordicon {
+
+input:invalid {
+    animation: shake 300ms;
+    color: red;
+
+}
+
+@keyframes shake {
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+i#passwordicon {
     position: relative;
     left: -36px;
 }
-.passwordiconsee {
+span.passwordiconsee {
     position: absolute;
-    right: 154px;
+    right: 136px;
     top: 376px;
     display: none;
 }

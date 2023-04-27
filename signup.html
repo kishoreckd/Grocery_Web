@@ -12,15 +12,16 @@
 </head>
 
 <body>
+    <div class="user_alert">
+        <h3>Incorrect username or Password</h3>
+    </div>
     <!-- main div -->
     <div class="container">
         <!-- logo div -->
         <div>
             <img class="logo" src="image/logo.svg" alt="">
         </div>
-        <div class="alert">
-            <h2 class="user_alert">user already exists</h2> 
-        </div>
+
         <!-- form - div  -->
         <div class="formdiv">
             <div>
@@ -29,29 +30,31 @@
                     <div class="lastnameDiv">
                         <div>
                             <label for="fname">First name:</label><span class="color">*</span><br>
-                            <input class="Firstname" type="text"  placeholder="Enter your Name" pattern="[a-z,A-Z]*">
+                            <input class="Firstname" type="text" placeholder="Enter your Name" pattern="[a-z,A-Z]*">
                         </div>
                         <div>
                             <label class="LastNa" for="fname">LastName:</label><br>
-                            <input class="LastName" type="text"  placeholder="Enter your Last Name" pattern="[a-z,A-Z]*">
+                            <input class="LastName" type="text" placeholder="Enter your Last Name" pattern="[a-z,A-Z]*">
                         </div>
                     </div>
                     <label for="fname">Email:</label><span class="color">*</span><br>
-                    <input class="email" type="text"  placeholder="Example@gmail.com" ><br><br>
+                    <input class="email" type="email" placeholder="Example@gmail.com" required><br><br>
                     <label for="fname">Password:</label><span class="color">*</span><br>
-                    <input class="Password" type="password" 
-                        placeholder="Password  Must Contain more than 8 Character" < ><span class="passwordicon"><i id="passwordicon" class="fa-solid fa-eye-slash"></i></span> <span class="passwordiconsee"><i class="fa-solid fa-eye"></i></span><br><br>
+                    <input class="Password" type="password" placeholder="Password  Must Contain more than 8 Character">
+                    <span class="passicon Password"><i id="passwordicon" class="fa-solid fa-eye-slash"></i></span> 
+                    <!-- <span class="passwordiconsee"><i class="fa-solid fa-eye"></i></span>-->
+                        <br><br> 
                     <label for="fname">Confirm Password:</label><span class="color">*</span><br>
-                    <p class="Password_alert"></p> 
-                    <input class="Confirmpassword" type="password"  placeholder="Confirm password" > <span class="passwordicon"><i id="Confirmpassword" class="fa-solid fa-eye-slash"></i></span> <span class="passwordiconsee"><i class="fa-solid fa-eye"></i></span> <br>
+                    <p class="Password_alert"></p>
+                    <input class="Confirmpassword" type="password" placeholder="Confirm password" > 
+                    <span class="passicon"><i id="passwordicon" class="fa-solid fa-eye-slash"></i></span>
+                    <!-- <span class="passwordiconsee"><i class="fa-solid fa-eye"></i></span> <br> -->
                     <br>
-                    <div class="checkbox">
-                        <input type="checkbox">
-                        <p class="checkboxtext">I accept the Terms Of Use &Privacy Policy</p>
-                    </div>
+
                     <br>
                     <button class="signbtn">Sign Up </button>
-                    <p class="add-login">Already have an Account?<a class="add-login-a" href="index.html">Login Here</a></p>
+                    <p class="add-login">Already have an Account?<a class="add-login-a" href="index.html">Login Here</a>
+                    </p>
                 </form>
             </div>
             <div>

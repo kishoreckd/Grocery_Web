@@ -1,25 +1,36 @@
 let Firstname = document.querySelector(".Firstname")
-
 let LastName = document.querySelector(".LastName")
-
 let userEmail = document.querySelector(".email")
-
 let Password = document.querySelector(".Password")
-
 let Confirmpassword = document.querySelector(".Confirmpassword")
-
 let signup = document.querySelector(".signbtn")
-
 let Password_alert = document.querySelector(".Password_alert")
-
-let passwordicon = document.querySelector("#passwordicon")
-
+let passwordicon = document.querySelectorAll("#passwordicon")
 let passwordiconsee = document.querySelector(".passwordiconsee")
-
 let user_alert = document.querySelector(".user_alert")
 
 
-passwordicon.addEventListener("click", (e) => userseepassword(e))
+
+/* ---------------------------------------------------------------------------------------- */
+/* eye icon changing functionality*/
+for (let i = 0; i < passwordicon.length; i++) {
+    passwordicon[i].addEventListener("click", (e) => {
+
+        if (e.target.parentElement.previousElementSibling.type == "password") {
+            e.target.className = "fa-solid fa-eye"
+            e.target.parentElement.previousElementSibling.type = "text"
+        }
+
+        else if (e.target.parentElement.previousElementSibling.type == "text") {
+            e.target.className = "fa-solid fa-eye-slash"
+            e.target.parentElement.previousElementSibling.type = "password"
+
+
+
+        }
+    })
+}
+
 
 /* ---------------------------------------------------------------------------------------- */
 /* When the signup button is clicked the input value is assigned to 
@@ -53,19 +64,19 @@ signup.addEventListener("click", (e) => {
 })
 /* ---------------------------------------------------------------------------------------- */
 /* This function checks whether the user inputs the password is equal to confirm password*/
-function userseepassword(e) {
+// function userseepassword(e) {
 
-    if (Password.type == " password") {
-        Password.type = "password"
+//     if (Password.type == " password") {
+//         Password.type = "password"
 
-    }
-    else {
-        Password.type = "text"
-        passwordiconsee.style.display = "block"
-        passwordicon.style.display = "none"
+//     }
+//     else {
+//         Password.type = "text"
+//         passwordiconsee.style.display = "block"
+//         passwordicon.style.display = "none"
 
-    }
-}
+//     }
+// }
 
 
 /* ---------------------------------------------------------------------------------------- */
@@ -112,3 +123,11 @@ function gettingdata_from_user() {
 }
 
 /* ---------------------------------------------------------------------------------------- */
+
+
+function add(e) {
+    let a = e.className = "fa-solid fa-eye"
+    // a.classList[1] = "fa-eye"
+    // a.classList.value.innerHTML = `<i class="fa-solid fa-eye"></i>`
+    console.log(a)
+}   
