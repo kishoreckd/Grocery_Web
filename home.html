@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>grocerry home page</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="./home.css">
     <script src="https://kit.fontawesome.com/52d2b40c3f.js" crossorigin="anonymous"></script>
 </head>
 
@@ -14,14 +14,18 @@
 
     <header>
         <div class="logo">
-            <a href="home.html"><img src="image/logo.svg"></a>
+            <a href="./home.html"><img src="image/logo.svg"></a>
         </div>
         <div class="headings">
-            <a >HOME</a>
-            <a  class="category">CATEGORY</a>
-            <a >PRODUCT</a>
-            <a >DEAL</a>
-            <a >CONTACT</a>
+            <a>HOME</a>
+            <a class="headerCatog">CATEGORY</a>
+            <div class="home">
+                <a href="#veg_section">Vegetables</a>
+                <a href="#fruit_section">fruits</a>
+            </div>
+            <a>PRODUCT</a>
+            <a>DEAL</a>
+            <a>CONTACT</a>
         </div>
         <div class="headericons">
             <a><img src="icons/Search.svg"></a>
@@ -29,12 +33,9 @@
             <a><img src="icons/Cart.svg"></a>
             <a><img src="icons/Person Circle.svg"></a>
         </div>
-        <div class="dropDown">
-
-        </div>
     </header>
-    
-    <section>
+
+    <section class="section-1">
         <i class="fa-solid fa-circle-notch fa-spin" style="display: none;"></i>
         <div class="bannersection">
             <div class="offersText">
@@ -79,7 +80,7 @@
         </div>
     </section>
 
-    <section class="firstScroll">
+    <section class="section-2">
         <div class="topCategory">
             <h1>Top CateGory</h1>
             <div class="emptyline">
@@ -144,20 +145,29 @@
         <div style="padding: 10px 0px;">
             <h1>Popular Products</h1>
             <div class="headText">
-                <h3 class="viewmoreBtn"><a href="#">View More</a></h3>
+                <h3 class="viewmoreBtn"><a href="#section">View More</a></h3>
             </div>
         </div>
-        <div class="products">
-            <h1>Vegetables</h1>
+        <div class="products" id="#veg">
+            <h1 id="veg_section" style="padding: 10px;">Vegetables</h1>
             <div class="vegitablesDiv">
 
             </div>
-            <h1>Fruits</h1>
+            <h1 id="fruit_section" style="padding: 10px;">Fruits</h1>
             <div class="fruitsDiv">
-                
+
+            </div>
+        </div>
+        <div class="basket">
+            <div>
+                <h4>Add <span class="toMore"></span> to place an order</h4>
+            </div>
+            <div>
+                <h4>Basket <span class="totalPr"></span> </h4>
             </div>
         </div>
     </section>
+
     <script src="home.js"></script>
 </body>
 
