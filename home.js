@@ -7,6 +7,7 @@ let loader = document.querySelector('.fa-solid')
 let dDcategory = document.querySelector('.category')
 let toMoreAdd=document.querySelector('.toMore')
 let basketPrice=document.querySelector('.totalPr')
+let basket=document.querySelector('.basket')
 
 window.addEventListener('DOMContentLoaded', () => {
     fetch(`http://localhost:3000/products`)
@@ -66,6 +67,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     let productRateDiv = document.createElement('div')
                     productRateDiv.setAttribute('class', 'productRate')
                     let productName = document.createElement('h3')
+                    let priceDiv=document.createElement('div')
+                    priceDiv.setAttribute('class','priceDiv')
                     let rateTag = document.createElement('span')
                     let discountTag = document.createElement('del')
 
@@ -74,6 +77,10 @@ window.addEventListener('DOMContentLoaded', () => {
                     btnDiv.setAttribute('class', 'btnsection')
                     let weightBtn = document.createElement('button')
                     let addBtn = document.createElement('button')
+
+                    let plus=document.createElement('span')
+                    let itemNumber=document.createElement('span')
+                    let minus=document.createElement('span')
 
                     let quantity = /,(.*\w+)/.exec(productsName)[1];
                     let Pname = /(.*\w+),/.exec(productsName)[1];
@@ -104,8 +111,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     productInnerDiv.appendChild(productRateDiv)
                     productRateDiv.appendChild(productName)
-                    productRateDiv.appendChild(rateTag)
-                    rateTag.append(discountTag)
+                    productRateDiv.appendChild(priceDiv)
+                    priceDiv.appendChild(rateTag)
+                    priceDiv.append(discountTag)
 
                     productInnerDiv.appendChild(btnDiv)
                     btnDiv.appendChild(weightBtn)
@@ -120,12 +128,36 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     })
 
+
+
                     addBtn.addEventListener('click',()=>{
-                      let weight=addBtn.previousSibling.innerText
-                    //   let ProPrice=
-                      const separatedWeight= weight.replace(/\D/g, '')
+                        itemNumber=1
+                      let addedItemPrice=addBtn.parentElement.previousSibling.lastChild.firstChild.innerText.slice(1,5)
+                    //   console.log(addedItemPrice);
+                      basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice) 
+                      if(basketPrice.innerText!==0){
+                        addBtn.innerText=''
+                        plus.innerHTML="+"
+                        minus.innerHTML="-"
+                        addBtn.append(minus,itemNumber,plus)
+                        basket.classList.add('show')
+                        
+                      }
+
+                    //   const separatedWeight= weight.replace(/\D/g, '')
                       
                     })    
+
+
+                    plus.addEventListener('click',(e)=>{
+                        addBtn.style.visibility='hidden'
+                        console.log(e.target);
+                        Number(itemNumber++)
+                        alert()
+                      })
+                      minus.addEventListener('click',(e)=>{
+                        console.log(e.target);
+                      })
                 }
 
 

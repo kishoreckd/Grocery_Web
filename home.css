@@ -382,15 +382,18 @@ a {
 }
 /* ----------below div is third sub div name is productRate ----------*/
 
-.productRate {
-    display: flex;
-    flex-direction: column;
-}
+.productRate>h3 {
+    height: 40px;
+    width: 210px;
+    font-size: 16px;
+    text-align: center;
+    color: #002F07;
 
-.productRate>span {
+}
+.priceDiv{
     display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 5px;
+    align-items: baseline;
 }
 
 del {
@@ -398,14 +401,7 @@ del {
     color: darkred;
 }
 
-.productRate>h3 {
-    height: 40px;
-    width: 200px;
-    font-size: 16px;
-    text-align: center;
-    color: #002F07;
 
-}
         /* ----------forth sub div is bitton div for buttons--------- */
 
 .btnsection {
@@ -462,7 +458,13 @@ del {
     opacity: 1;
     transition: 0s
   }
-
+.btnsection>:last-child{
+    display: flex;
+    justify-content: space-around;
+}
+.btnsection:last-child>*{
+    font-size: 20px;
+}
 /* ------The second div of productinnerdiv is fruits div  
         this div's also have a same 4 child divs like above the vegetable div-------*/
 .fruitsDiv {
@@ -486,7 +488,11 @@ del {
     justify-content: center;
     border: 1px solid #42A953;
     box-shadow: #456349 1px 1px 5px 0px;
-
+    display: none;
+}
+.show{
+    display: block;
+    display: flex;
 }
 .basket>:first-child{
     padding: 15px 7px;
