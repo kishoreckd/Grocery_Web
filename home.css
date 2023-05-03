@@ -408,6 +408,7 @@ del {
     display: flex;
     justify-content: space-between;
     padding: 5px;
+    position: relative;
 }
 
 .btnsection>button:first-child {
@@ -419,7 +420,7 @@ del {
     cursor: not-allowed;
 }
 
-.btnsection>button:last-child {
+.btnsection>.addbtn {
     height: 25px;
     width: 90px;
     border: none;
@@ -428,42 +429,26 @@ del {
     cursor: pointer;
     color: #ffffff;
 }
-.btnsection>button:last-child:hover{
+.btnsection>.addbtn:hover{
     box-shadow: #456349 1px 1px 5px 0px;
 
 }
-.btnsection>button:last-child {
-    position: relative;
-    border: none;
-    -webkit-transition-duration: 0.4s; 
-    transition-duration: 0.4s;
-    overflow: hidden;
-  }
-  
-  .btnsection>button:last-child:after {
-    content: "";
-    background: #002F07;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -20px!important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s
-  }
-.btnsection>button:last-child:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
-  }
-.btnsection>:last-child{
+
+.addBtnAfter{
+    width: 90px;
+    font-size: 20px;
+    border: 1px solid #42A953;
+    border-radius: 3px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
+    
 }
-.btnsection:last-child>*{
-    font-size: 20px;
+.addBtnAfter{
+    display: flex;
+    justify-content: space-around;
+
 }
 /* ------The second div of productinnerdiv is fruits div  
         this div's also have a same 4 child divs like above the vegetable div-------*/
@@ -490,10 +475,12 @@ del {
     box-shadow: #456349 1px 1px 5px 0px;
     display: none;
 }
+
 .show{
     display: block;
     display: flex;
 }
+
 .basket>:first-child{
     padding: 15px 7px;
     width: 200px;
@@ -507,3 +494,6 @@ del {
 }
 /* ===========================section-3's style was ended here========================================== */
 
+.hide{
+    display: none;
+}

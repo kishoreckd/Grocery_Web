@@ -77,6 +77,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     btnDiv.setAttribute('class', 'btnsection')
                     let weightBtn = document.createElement('button')
                     let addBtn = document.createElement('button')
+                    addBtn.setAttribute('class','addbtn')
+                    let addBtnafter=document.createElement('div')
+                    addBtnafter.setAttribute('class','addBtnAfter')
 
                     let plus=document.createElement('span')
                     let itemNumber=document.createElement('span')
@@ -128,21 +131,22 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     })
 
-
+                    let addedItemPrice=addBtn.parentElement.previousSibling.lastChild.firstChild.innerText.slice(1,5)
 
                     addBtn.addEventListener('click',()=>{
-                        itemNumber=1
-                      let addedItemPrice=addBtn.parentElement.previousSibling.lastChild.firstChild.innerText.slice(1,5)
-                    //   console.log(addedItemPrice);
-                      basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice) 
-                      if(basketPrice.innerText!==0){
-                        addBtn.innerText=''
-                        plus.innerHTML="+"
-                        minus.innerHTML="-"
-                        addBtn.append(minus,itemNumber,plus)
+
+                        addBtn.style.display='none'
                         basket.classList.add('show')
-                        
-                      }
+                        addBtnafter.style.display='block'
+                    
+                      basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice) 
+                        if(addBtn.style.display=='none'){
+                            minus.innerHTML='-'
+                            plus.innerHTML='+'
+                            itemNumber.innerHTML=1  
+                            addBtnafter.append(minus,itemNumber,plus)
+                            btnDiv.appendChild(addBtnafter)
+                        }
 
                     //   const separatedWeight= weight.replace(/\D/g, '')
                       
@@ -150,14 +154,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
                     plus.addEventListener('click',(e)=>{
-                        addBtn.style.visibility='hidden'
-                        console.log(e.target);
-                        Number(itemNumber++)
-                        alert()
+                        
+                        basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice)
+                        itemNumber.innerHTML=Number(itemNumber.innerHTML)+1
+                        console.log(typeof(itemNumber));
+                        console.log(basketPrice.innerHTML);
+                        
                       })
                       minus.addEventListener('click',(e)=>{
-                        console.log(e.target);
+                        basketPrice.innerHTML=Number(basketPrice.innerHTML)-Number(addedItemPrice)
+                        itemNumber.innerHTML=Number(itemNumber.innerHTML)-1
+                        if(basketPrice.innerHTML==0){
+                            basket.classList.remove('show')
+                            addBtnafter.style.display='none'
+                            addBtn.style.display='block'
+                        }
                       })
+
                 }
 
 
