@@ -59,7 +59,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     // below div for show the products main image
                     let productImageDiv = document.createElement('div')
-                    productImageDiv.setAttribute('class', 'productImg')
+                    productImageDiv.setAttribute(
+                        'class', 'productImg')
                     let productImage = document.createElement('img')
                     productImage.src = productImg
 
@@ -81,9 +82,11 @@ window.addEventListener('DOMContentLoaded', () => {
                     let addBtnafter=document.createElement('div')
                     addBtnafter.setAttribute('class','addBtnAfter')
 
-                    let plus=document.createElement('span')
+                    let plus=document.createElement('button')
+                   
+
                     let itemNumber=document.createElement('span')
-                    let minus=document.createElement('span')
+                    let minus=document.createElement('button')
 
                     let quantity = /,(.*\w+)/.exec(productsName)[1];
                     let Pname = /(.*\w+),/.exec(productsName)[1];
@@ -164,10 +167,13 @@ window.addEventListener('DOMContentLoaded', () => {
                       minus.addEventListener('click',(e)=>{
                         basketPrice.innerHTML=Number(basketPrice.innerHTML)-Number(addedItemPrice)
                         itemNumber.innerHTML=Number(itemNumber.innerHTML)-1
-                        if(basketPrice.innerHTML==0){
-                            basket.classList.remove('show')
+                        if(itemNumber.innerHTML==0){
+                           
                             addBtnafter.style.display='none'
                             addBtn.style.display='block'
+                        }
+                        if(basketPrice.innerHTML==0){
+                            basket.classList.remove('show')
                         }
                       })
 
