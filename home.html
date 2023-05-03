@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>grocerry home page</title>
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <script src="https://kit.fontawesome.com/52d2b40c3f.js" crossorigin="anonymous"></script>
 </head>
 
@@ -108,6 +109,7 @@
                 </div>
             </div>
             <div class="items">
+
                 <div class="vegImg"><img src="image/—Pngtree— nutrition green_3826173 1.svg"></div>
                 <div>
                     <span>Vegetables</span>
@@ -166,6 +168,67 @@
                 <h4>Basket ₹<span class="totalPr">0</span> </h4>
             </div>
         </div>
+        <div class="modal-overlay">
+            <div class="modal-container">
+                <button class="close-btn" id="closebtn"><i class="fa-regular fa-circle-xmark"></i></button>
+                <div class="minicart">
+                    <div class="leftcontainer">lineline
+                        <div class="cartheader">
+                            <h1 class="cartitems">Grocery Basket(<span class="carttotal"> </span>Items)</h1>
+                        </div>
+                        <div class="cart_header_line"></div>
+                    </div>
+                    <div class="rightcontainer">
+                        <div class="pricedetails">
+                            <h3 class="pricedet_head">PRICE DETAILS</h3>
+                            <div class="pricedet_headline"></div>
+                            <div class="pricedet_description">
+                                <div class="one">
+                                    <div>
+                                        <h3 class="mrptitle">MRP(<span class="carttotal"> </span>Items)</h3>
+                                    </div>
+                                    <div>
+                                        <h3 class="mrp">₹<span>34</span></h3>
+                                    </div>
+                                </div>
+                                <div class="two">
+                                    <div>
+                                        <h3 class="product_discount_title">Product Discount </h3>
+                                    </div>
+                                    <div>
+                                        <h3 class="product_discount">₹<span>34</span></h3>
+                                    </div>
+
+                                </div>
+                                <div class="three">
+                                    <div>
+                                        <h3 class="delivery_fees_title">Delivery Fees </h3>
+                                    </div>
+                                    <div>
+                                        <h3 class="delivery_fees">₹<span>60</span></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="pricedet_footline"></div>
+                                <div class="three">
+                                    <div>
+                                        <h3 class="total_amount_description">Delivery Fees </h3>
+                                    </div>
+                                    <div>
+                                        <h3 class="amount">₹<span class="total_amount">60</span></h3>
+                                    </div>
+                                </div>
+                                <div class="pricedet_footline"></div>
+                                <div class="save">
+                                    <p class=""> You will ₹ <span class="saving_amount"></span> save on this order </p>
+                                </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
     </section>
 
     <script src="home.js"></script>

@@ -1,34 +1,40 @@
-let userEmail= document.querySelector(".email")
-let Password= document.querySelector(".password")
-let submit=document.querySelector(".submit")
-let user_alert=document.querySelector(".user_alert")
+let userEmail = document.querySelector(".email")
+let Password = document.querySelector(".password")
+let submit = document.querySelector(".submit")
+let user_alert = document.querySelector(".user_alert")
 let passwordicon = document.querySelector("#passwordicon")
 let homepage_redirect = document.querySelector(".home")
 
 
+
 /* ---------------------------------------------------------------------------------------- */
 /* checking whether the user is old or new*/
-submit.addEventListener("click",(e)=>{
+submit.addEventListener("click", (e) => {
     // alert()
     e.preventDefault()
     fetch(`http://localhost:3000/users/?Email=${userEmail.value}&Password=${Password.value}`)
-    .then(data => data.json())
-    .then(data=>{
-        if (data.length ==0) {
-            
+        .then(data => data.json())
+        .then(data => {
+            if (data.length == 0) {
 
-            user_alert.innerText = "Incorrect username or Password"
-            user_alert.classList.add("visible")
 
-            setTimeout(() => {
-                user_alert.classList.remove("visible")
-            }, 1000);
-        }
-       else{
-        homepage_redirect.setAttribute("href","./home.html")
-       }
-     
-    })
+                user_alert.innerText = "Incorrect username or Password"
+                user_alert.classList.add("visible")
+
+                setTimeout(() => {
+                    user_alert.classList.remove("visible")
+                }, 1000);
+            }
+            else {
+                let localstorage = window.localStorage
+                localstorage.setItem("Firstname", data[0].Firstname)
+                localstorage.setItem("Email", data[0].Email)
+
+
+                window.location = window.location.origin + "/home.html"
+            }
+
+        })
 
 
 })

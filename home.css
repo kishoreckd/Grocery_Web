@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap%27');
+
 * {
     margin: 0%;
     padding: 0%;
@@ -28,6 +30,7 @@ header {
     width: 100%;
 
 }
+
 
 header:hover {
     box-shadow: #d6d6d6 0px 5px 10px 0px;
@@ -348,7 +351,8 @@ a {
 }
 
 .heart {
-    cursor: pointer;
+    cursor: pointer;    font-family: 'Karla', sans-serif;
+
     height: 27px;
     width: 27px;
     padding: 3px;
@@ -497,3 +501,81 @@ del {
 .hide{
     display: none;
 }
+
+
+/* ===========================minicart styles========================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(163, 182,167, 0.5);
+    display: grid;
+    place-items: center;
+    transition:  620px;
+    visibility: visible;
+    z-index: 10;
+  }
+  .minicart{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modal-overlay1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(163, 182,167, 0.5);
+    display: grid;
+    place-items: center;
+    transition:  620px;
+    visibility: hidden;
+    z-index: -10;
+  }
+
+
+.close-btn {
+    position: absolute;
+    top: 2px;
+    right: 1rem;
+    color: hsl(0, 100%, 50%);
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+  transition: all 0.3s  hsl(360, 67%, 44%);
+}
+  .close-btn:hover {
+    color: hsl(360, 67%, 44%);
+    transform: scale(1.1);
+  }
+  
+.modal-container {
+    background: #fff;
+    border-radius: 0.5rem;
+    width: 1130px;
+    height: 320px;
+    /* max-width: var(--fixed-width); */
+    /* text-align: center; */
+    /* display: grid; */
+    place-items: center;
+    position: relative;
+  }
+  h1.cartitems {
+    font-family: 'Karla', sans-serif;
+font-weight: 400;
+color: #002F07;
+    margin: 20px;
+}
+  .cart_header_line{
+    background-color: rgba(0, 0, 0, 25%);
+    height: 1px;
+    width: 610px;
+  }
+  

@@ -1,3 +1,4 @@
+
 let section3 = document.querySelector('.section-3')
 let productsDiv = document.querySelector('.products')
 let vegetableDiv = document.querySelector('.vegitablesDiv')
@@ -5,10 +6,15 @@ let fruitDiv = document.querySelector('.fruitsDiv')
 let viewmoreBtn = document.querySelector('.viewmoreBtn')
 let loader = document.querySelector('.fa-solid')
 let dDcategory = document.querySelector('.category')
-let toMoreAdd=document.querySelector('.toMore')
-let basketPrice=document.querySelector('.totalPr')
-let basket=document.querySelector('.basket')
+let toMoreAdd = document.querySelector('.toMore')
+let basketPrice = document.querySelector('.totalPr')
+let basket = document.querySelector('.basket')
+let closebtn = document.querySelector("#closebtn")
+let modal = document.querySelector(".modal-overlay")
 
+
+
+/* ---------------------------------------------------------------------------------------- */
 window.addEventListener('DOMContentLoaded', () => {
     fetch(`http://localhost:3000/products`)
         .then(response => response.json())
@@ -67,8 +73,8 @@ window.addEventListener('DOMContentLoaded', () => {
                     let productRateDiv = document.createElement('div')
                     productRateDiv.setAttribute('class', 'productRate')
                     let productName = document.createElement('h3')
-                    let priceDiv=document.createElement('div')
-                    priceDiv.setAttribute('class','priceDiv')
+                    let priceDiv = document.createElement('div')
+                    priceDiv.setAttribute('class', 'priceDiv')
                     let rateTag = document.createElement('span')
                     let discountTag = document.createElement('del')
 
@@ -77,13 +83,13 @@ window.addEventListener('DOMContentLoaded', () => {
                     btnDiv.setAttribute('class', 'btnsection')
                     let weightBtn = document.createElement('button')
                     let addBtn = document.createElement('button')
-                    addBtn.setAttribute('class','addbtn')
-                    let addBtnafter=document.createElement('div')
-                    addBtnafter.setAttribute('class','addBtnAfter')
+                    addBtn.setAttribute('class', 'addbtn')
+                    let addBtnafter = document.createElement('div')
+                    addBtnafter.setAttribute('class', 'addBtnAfter')
 
-                    let plus=document.createElement('span')
-                    let itemNumber=document.createElement('span')
-                    let minus=document.createElement('span')
+                    let plus = document.createElement('span')
+                    let itemNumber = document.createElement('span')
+                    let minus = document.createElement('span')
 
                     let quantity = /,(.*\w+)/.exec(productsName)[1];
                     let Pname = /(.*\w+),/.exec(productsName)[1];
@@ -121,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     productInnerDiv.appendChild(btnDiv)
                     btnDiv.appendChild(weightBtn)
                     btnDiv.appendChild(addBtn)
-                    
+
                     whisticonDiv.addEventListener('click', (e) => {
                         if (hearticon.classList.contains('fa-regular')) {
                             hearticon.setAttribute('class', 'fa-solid fa-heart')
@@ -131,45 +137,45 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     })
 
-                    let addedItemPrice=addBtn.parentElement.previousSibling.lastChild.firstChild.innerText.slice(1,5)
+                    let addedItemPrice = addBtn.parentElement.previousSibling.lastChild.firstChild.innerText.slice(1, 5)
 
-                    addBtn.addEventListener('click',()=>{
+                    addBtn.addEventListener('click', () => {
 
-                        addBtn.style.display='none'
+                        addBtn.style.display = 'none'
                         basket.classList.add('show')
-                        addBtnafter.style.display='block'
-                    
-                      basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice) 
-                        if(addBtn.style.display=='none'){
-                            minus.innerHTML='-'
-                            plus.innerHTML='+'
-                            itemNumber.innerHTML=1  
-                            addBtnafter.append(minus,itemNumber,plus)
+                        addBtnafter.style.display = 'block'
+
+                        basketPrice.innerHTML = Number(basketPrice.innerHTML) + Number(addedItemPrice)
+                        if (addBtn.style.display == 'none') {
+                            minus.innerHTML = '-'
+                            plus.innerHTML = '+'
+                            itemNumber.innerHTML = 1
+                            addBtnafter.append(minus, itemNumber, plus)
                             btnDiv.appendChild(addBtnafter)
                         }
 
-                    //   const separatedWeight= weight.replace(/\D/g, '')
-                      
-                    })    
+                        //   const separatedWeight= weight.replace(/\D/g, '')
+
+                    })
 
 
-                    plus.addEventListener('click',(e)=>{
-                        
-                        basketPrice.innerHTML=Number(basketPrice.innerHTML)+Number(addedItemPrice)
-                        itemNumber.innerHTML=Number(itemNumber.innerHTML)+1
-                        console.log(typeof(itemNumber));
+                    plus.addEventListener('click', (e) => {
+
+                        basketPrice.innerHTML = Number(basketPrice.innerHTML) + Number(addedItemPrice)
+                        itemNumber.innerHTML = Number(itemNumber.innerHTML) + 1
+                        console.log(typeof (itemNumber));
                         console.log(basketPrice.innerHTML);
-                        
-                      })
-                      minus.addEventListener('click',(e)=>{
-                        basketPrice.innerHTML=Number(basketPrice.innerHTML)-Number(addedItemPrice)
-                        itemNumber.innerHTML=Number(itemNumber.innerHTML)-1
-                        if(basketPrice.innerHTML==0){
+
+                    })
+                    minus.addEventListener('click', (e) => {
+                        basketPrice.innerHTML = Number(basketPrice.innerHTML) - Number(addedItemPrice)
+                        itemNumber.innerHTML = Number(itemNumber.innerHTML) - 1
+                        if (basketPrice.innerHTML == 0) {
                             basket.classList.remove('show')
-                            addBtnafter.style.display='none'
-                            addBtn.style.display='block'
+                            addBtnafter.style.display = 'none'
+                            addBtn.style.display = 'block'
                         }
-                      })
+                    })
 
                 }
 
@@ -184,7 +190,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+closebtn.addEventListener("click",() => {
+    modal.classList.add("modal-overlay1")
 
+})
 
 
 

@@ -50,6 +50,8 @@ signup.addEventListener("click", (e) => {
                 is new*/
 
                 gettingdata_from_user()
+                window.location= window.location.origin+"/home.html"
+
             }
             else {
                 /* If the user is already existed it alerts the user*/
