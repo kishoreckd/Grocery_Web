@@ -47,8 +47,9 @@ form.loginform {
 }
 input{
     box-shadow: 2px 2px 10px rgb(151, 151, 151);
-    padding-left: 10px;
+    padding-left: 20px;
     font-size: 14px;
+    
 }
 input:focus{
     outline: none;
@@ -91,9 +92,10 @@ button {
     background-color: #1A942D;
 }
 button:hover{
+    cursor: pointer;
     background-color: white;
     color: #002F07;
-    border: #002F07;
+    border:1px solid #1A942D;
     box-shadow: 2px 2px 10px rgb(151, 151, 151);
 }
 img.logos {
@@ -138,6 +140,10 @@ input:invalid {
 i#passwordicon {
     position: relative;
     left: -36px;
+}
+i{
+    cursor: pointer;
+
 }
 span.passwordiconsee {
     position: absolute;

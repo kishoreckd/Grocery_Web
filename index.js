@@ -3,6 +3,8 @@ let Password= document.querySelector(".password")
 let submit=document.querySelector(".submit")
 let user_alert=document.querySelector(".user_alert")
 let passwordicon = document.querySelector("#passwordicon")
+let homepage_redirect = document.querySelector(".home")
+
 
 /* ---------------------------------------------------------------------------------------- */
 /* checking whether the user is old or new*/
@@ -22,12 +24,15 @@ submit.addEventListener("click",(e)=>{
                 user_alert.classList.remove("visible")
             }, 1000);
         }
+       else{
+        homepage_redirect.setAttribute("href","./home.html")
+       }
      
     })
 
 
 })
-/* ---------------------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------------- */
 
 /* eye icon changing functionality*/
 passwordicon.addEventListener("click", (e) => {
